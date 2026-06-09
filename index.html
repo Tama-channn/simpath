@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimPath - Graduate with Real Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { simpath: { DEFAULT: '#3C3489', hover: '#534AB7', light: '#EEEDF9', dark: '#241E53' } } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 min-w-[1200px] flex flex-col min-h-screen">
+
+    <div class="bg-yellow-100 text-yellow-800 text-center py-2 px-4 text-sm font-medium border-b border-yellow-200">
+        💡 <strong>JUDGES DEMO NOTICE:</strong> SimPath user framework is completely active. Click "Go to Student Dashboard" to see tracking metrics.
+    </div>
+
+    <nav class="bg-simpath text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider bg-white text-simpath px-3 py-1 rounded">SimPath</span>
+            </a>
+            <div class="flex items-center space-x-6 font-medium">
+            <a href="index.html" class="text-white border-b-2 border-white pb-1">Home</a>
+            <a href="dashboard.html" class="text-white/80 hover:text-white transition">Student Dashboard</a>
+            <a href="simulation.html" class="text-white/80 hover:text-white transition">Job Simulation</a>
+            
+            <!-- ĐÂY LÀ MỤC MỚI THÊM VÀO BRO NHÉ -->
+            <a href="advanced-simulation.html" class="text-yellow-300 hover:text-yellow-400 font-semibold transition flex items-center space-x-1">
+                <span>🔥 Advanced Sim</span>
+            </a>
+
+            <a href="apply-match.html" class="text-white/80 hover:text-white transition">Advanced Match</a>
+            <a href="cohort-workspace.html" class="text-white/80 hover:text-white transition">Cohort Workspace</a>
+            <a href="signup.html" class="bg-yellow-400 text-simpath-dark px-5 py-2.5 rounded-lg font-bold hover:bg-yellow-500 transition shadow">Apply for Batch</a>
+        </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <div class="relative bg-simpath text-white py-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(60, 52, 137, 0.9), rgba(36, 30, 83, 0.95)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');">
+            <div class="max-w-4xl mx-auto text-center px-6">
+                <h1 class="text-5xl font-extrabold leading-tight tracking-tight mb-6">
+                    Graduate with Real Experience — <br><span class="text-yellow-400">Not Just a Degree</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                    SimPath empowers university students to confidently enter the labor market through real-world work simulations evaluated by AI and top corporate partners.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="dashboard.html" class="bg-yellow-400 hover:bg-yellow-500 text-simpath-dark font-bold px-8 py-4 rounded-xl shadow-lg transition">Go to Student Dashboard</a>
+                    <a href="simulation.html" class="border-2 border-white hover:bg-white hover:text-simpath text-white font-semibold px-8 py-4 rounded-xl transition">Try Job Simulations</a>
+                    <a href="advanced-simulation.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold px-6 py-4 rounded-xl shadow-lg transition border border-purple-500">
+        🚀 Try Advanced Sim (Q3 Variance)
+    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 py-12 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Our program is backed up by world-class academic institutions</p>
+                <div class="flex justify-center items-center gap-16 opacity-40 grayscale contrast-200">
+                    <div class="flex items-center space-x-2 text-xl font-serif font-semibold text-slate-800">
+                        <span class="text-2xl border-2 border-slate-800 px-1 rounded-sm">Penn</span>
+                        <span class="tracking-tight text-sm font-sans font-bold">University of Pennsylvania</span>
+                    </div>
+                    <div class="flex items-center space-x-1 text-lg font-serif font-bold text-slate-800 tracking-wider">
+                        <span>HARVARD</span>
+                        <span class="text-xs font-sans font-normal border-l border-slate-800 pl-1">UNIVERSITY</span>
+                    </div>
+                    <div class="text-2xl font-serif font-extrabold tracking-tight text-slate-800">
+                        Yale <span class="text-xs font-sans font-light tracking-normal">University</span>
+                    </div>
+                    <div class="text-lg font-sans font-semibold tracking-widest text-slate-800">
+                        COLUMBIA UNIVERSITY
+                    </div>
+                    <div class="text-xl font-serif italic font-bold tracking-tight text-slate-800">
+                        Stanford <span class="text-xs font-sans not-italic font-semibold tracking-wider">University</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white py-16 border-b">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-3 gap-12 text-center">
+                <div class="border-r border-gray-100">
+                    <div class="text-5xl font-extrabold text-simpath mb-2">44.4%</div>
+                    <div class="text-gray-600 font-medium">Of students feel universities lack practical skills training</div>
+                </div>
+                <div class="border-r border-gray-100">
+                    <div class="text-5xl font-extrabold text-simpath mb-2">AI-Powered</div>
+                    <div class="text-gray-600 font-medium">Instant grading on structural business case metrics</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-extrabold text-simpath mb-2">Top 10%</div>
+                    <div class="text-gray-600 font-medium">Eligible for tuition reimbursement & direct hiring channels</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-simpath-dark text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm">
+            <div>&copy; 2026 SimPath. All rights reserved.</div>
+            <div>Support: <span class="text-white">studentsupport@simpath.com</span></div>
+        </div>
+    </footer>
+</body>
+</html>

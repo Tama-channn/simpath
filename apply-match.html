@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Strategic Evaluation - SimPath</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { simpath: { DEFAULT: '#3C3489', hover: '#534AB7', light: '#EEEDF9', dark: '#241E53' } } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-800 min-w-[1200px] flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-simpath text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider bg-white text-simpath px-3 py-1 rounded">SimPath</span>
+            </a>
+            <div class="flex items-center space-x-6 font-medium">
+                <a href="index.html" class="text-white/70 hover:text-white transition">Home</a>
+                <a href="dashboard.html" class="text-white/70 hover:text-white transition">Student Dashboard</a>
+                <a href="simulation.html" class="text-white/70 hover:text-white transition">Job Simulation</a>
+                <a href="advanced-simulation.html" class="text-yellow-300 hover:text-yellow-400 font-semibold transition flex items-center space-x-1">
+        <span>🔥 Advanced Sim</span>
+    </a>
+                <a href="apply-match.html" class="text-white border-b-2 border-white pb-1">Advanced Match</a>
+                <a href="cohort-workspace.html" class="text-white/70 hover:text-white transition">Cohort Workspace</a>
+                <a href="signup.html" class="bg-yellow-400 text-simpath-dark px-5 py-2.5 rounded-lg font-bold hover:bg-yellow-500 transition shadow">Apply for Batch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Step 8 Dashboard View matching layout blueprints of image_37a29d.jpg -->
+    <main class="flex-grow max-w-5xl mx-auto my-10 w-full bg-white rounded-xl shadow-xl overflow-hidden border border-slate-200">
+        <!-- Top Status Banner -->
+        <div class="bg-gradient-to-r from-blue-700 to-indigo-900 text-white p-8 relative">
+            <span class="bg-blue-500/30 text-blue-200 border border-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Level 3: Advanced Simulation Brief</span>
+            <h1 class="text-3xl font-extrabold mt-3">Basic Business Case Analysis</h1>
+            <p class="text-sm text-indigo-200 mt-2 font-light">Evaluates logical problem-solving, structural analytical structures, and business optimization strategies.</p>
+            <div class="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-indigo-100">
+                <span>⏱️ Duration: 20 minutes</span>
+                <span>📝 Format: Short Essay (150 - 250 words)</span>
+                <span>💯 Max Score: 100 pts</span>
+            </div>
+        </div>
+
+        <!-- Case Metrics Area -->
+        <div class="p-8 space-y-8">
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 uppercase tracking-wider text-xs mb-3 flex items-center">📊 BUSINESS CASE SCENARIO</h3>
+                <p class="text-sm text-slate-700 leading-relaxed mb-6">
+                    You have just joined <strong>GreenBrew</strong>—a premium organic coffee startup operating in Ho Chi Minh City for 2 years—as a Business Analyst Intern. Your manager hands you the latest monthly operating ledger and says: <em class="text-slate-900 font-medium">"Our total top-line revenue dropped 18% compared to last month. Analyze the metrics and identify the structural issues at play."</em>
+                </p>
+
+                <!-- Data Parameter Matrix boxes from image_37a29d.jpg -->
+                <div class="grid grid-cols-5 gap-3 text-center">
+                    <div class="bg-white p-3 border rounded-lg shadow-sm"><div class="text-[10px] font-bold text-slate-400 uppercase">Previous Month Revenue</div><div class="text-sm font-bold text-slate-800 mt-1">320M VND</div></div>
+                    <div class="bg-white p-3 border rounded-lg shadow-sm"><div class="text-[10px] font-bold text-slate-400 uppercase">Current Month Revenue</div><div class="text-sm font-bold text-slate-800 mt-1">262M VND</div></div>
+                    <div class="bg-white p-3 border rounded-lg shadow-sm"><div class="text-[10px] font-bold text-slate-400 uppercase">Order Volume</div><div class="text-sm font-bold text-red-600 mt-1">-12% Drop</div></div>
+                    <div class="bg-white p-3 border rounded-lg shadow-sm"><div class="text-[10px] font-bold text-slate-400 uppercase">Average Order Value</div><div class="text-sm font-bold text-red-600 mt-1">-7% Drop</div></div>
+                    <div class="bg-white p-3 border rounded-lg shadow-sm"><div class="text-[10px] font-bold text-slate-400 uppercase">Operating Costs</div><div class="text-sm font-bold text-emerald-600 mt-1">Unchanged</div></div>
+                </div>
+            </div>
+
+            <!-- Student Submission Terminal Section -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-slate-900 uppercase tracking-wider text-xs flex items-center">❓ ASSIGNMENT QUESTIONS</h3>
+                <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-5 text-sm text-slate-700 space-y-3 leading-relaxed">
+                    <p><strong>a)</strong> In your assessment, what are the two most probable root causes driving this top-line revenue contraction? Provide metric-backed justifications for your choices.</p>
+                    <p><strong>b)</strong> Propose exactly one tactical action item your manager can execute next week to validate your hypothesized root causes.</p>
+                    <p class="text-xs text-amber-700 bg-amber-50 p-2.5 rounded-lg border border-amber-200 mt-2">💡  <strong>Hint:</strong> Focus closely on the divergent patterns between shrinking order volume and compressing average transaction value—they indicate completely different underlying issues.</p>
+                </div>
+
+                <textarea id="essay-submission" placeholder="Type your structured analytical solution essay here (150 - 250 words required)..." class="w-full h-40 p-4 border rounded-xl text-sm focus:ring-2 focus:ring-indigo-600 focus:outline-none shadow-inner"></textarea>
+                
+                <div class="flex justify-end">
+                    <button onclick="executeSeniorMockReview()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-6 py-3 rounded-xl shadow transition">Submit to Senior Mentorship Evaluation Board</button>
+                </div>
+            </div>
+
+            <!-- Grading Evaluation Rubric Matrix from image_37a29d.jpg -->
+            <div class="border-t pt-6 space-y-4">
+                <h3 class="font-bold text-slate-400 uppercase tracking-wider text-xs text-center">OFFICIAL GRADING RUBRIC</h3>
+                <div class="grid grid-cols-4 gap-4 text-xs">
+                    <div class="bg-slate-50 p-3 rounded-lg border">
+                        <div class="font-bold text-slate-800 flex justify-between"><span>Problem Identification</span> <span class="text-indigo-600">30 pts</span></div>
+                        <p class="text-[11px] text-slate-500 mt-1">Clearly distinguishes the two drop factors; does not confuse symptoms with core root causes.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg border">
+                        <div class="font-bold text-slate-800 flex justify-between"><span>Analytical Logic</span> <span class="text-indigo-600">30 pts</span></div>
+                        <p class="text-[11px] text-slate-500 mt-1">Provides rational logic frameworks; successfully incorporates provided numerical data points.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg border">
+                        <div class="font-bold text-slate-800 flex justify-between"><span>Action Proposal</span> <span class="text-indigo-600">30 pts</span></div>
+                        <p class="text-[11px] text-slate-500 mt-1">Proposes a practical action item executable within 1 week with clear operational verification goals.</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 rounded-lg border">
+                        <div class="font-bold text-slate-800 flex justify-between"><span>Structure & Clarity</span> <span class="text-indigo-600">10 pts</span></div>
+                        <p class="text-[11px] text-slate-500 mt-1">Answers all sub-questions cleanly; maintains a concise professional tone; meets length parameters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-simpath-dark text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm">
+            <div>&copy; 2026 SimPath. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        function executeSeniorMockReview() {
+            const txt = document.getElementById('essay-submission').value;
+            if (txt.trim().length < 40) {
+                alert("Please write a more detailed response to initialize the Senior Mentor grading review panel simulation!");
+                return;
+            }
+            localStorage.setItem('simpath_lvl3_done', 'true');
+            alert("✅ Case brief successfully submitted to the GreenBrew Senior Mentorship Board!\n\nYour evaluation marks and cohort onboarding status have been synchronized with your Student Dashboard.");
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    min-width: 1200px; /* Lock standard desktop layout specs */
+}
+
+.text-simpath-dark {
+    color: #241E53;
+}
+.bg-simpath-dark {
+    background-color: #241E53;
+}

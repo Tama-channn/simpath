@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Simulation - SimPath</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        simpath: { DEFAULT: '#3C3489', hover: '#534AB7', light: '#EEEDF9', dark: '#241E53' },
+                        workspace: { bg: '#F9F9F6', card: '#FFFFFF', accent: '#707E54', sidebar: '#F4F4F0' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-workspace-bg text-gray-800 min-w-[1200px] font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Top Navigation Bar matching image_36605d.jpg context -->
+    <header class="bg-white border-b border-gray-200 px-8 h-20 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-4">
+            <a href="simulation.html" class="p-2 hover:bg-gray-100 rounded-xl transition">
+                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </a>
+            <div>
+                <div class="text-[11px] text-gray-400 font-medium tracking-wide uppercase">
+                    Acme Capital • Financial analyst • Advanced sim
+                </div>
+                <h1 class="text-xl font-bold text-gray-900 tracking-tight flex items-center mt-0.5">
+                    <span class="w-5 h-5 inline-block bg-simpath rounded-full mr-2 flex items-center justify-center text-[10px] text-white font-black">◎</span>
+                    Q3 variance analysis
+                </h1>
+            </div>
+        </div>
+
+        <!-- Live Countdown Timer Engine -->
+        <div class="bg-amber-50 border border-amber-200 text-amber-800 font-medium px-4 py-2 rounded-xl flex items-center space-x-2 text-sm shadow-sm">
+            <svg class="w-4 h-4 animate-spin text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-mono tracking-wider font-bold" id="simulation-countdown">01:42:33</span>
+            <span class="text-xs text-amber-600/80 pl-1 font-sans">remaining</span>
+        </div>
+    </header>
+
+    <!-- Main Core Layout Grid -->
+    <main class="max-w-7xl mx-auto px-8 py-10 w-full grid grid-cols-2 gap-8 items-start flex-grow">
+        
+        <!-- LEFT COLUMN: Task Brief & Assessment Rubrics -->
+        <section class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-8">
+            <div>
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1">task brief</span>
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">What you'll do</h2>
+                <p class="text-sm text-gray-600 mt-4 leading-relaxed font-light">
+                    Acme's Q3 revenue came in <span class="text-red-600 font-semibold bg-red-50 px-1 rounded">8% below forecast</span> across 3 product lines. Find the top 3 root causes, quantify each, and recommend Q4 corrective actions.
+                </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Materials Node with Hover Micro-interactions -->
+            <div>
+                <h3 class="font-bold text-xs text-gray-900 uppercase tracking-wider mb-3">Materials provided</h3>
+                <div class="space-y-2">
+                    <a href="#" onclick="alert('Downloading: q3_actuals_vs_forecast.xlsx')" class="flex items-center justify-between p-3 border border-gray-200 rounded-xl hover:border-simpath hover:bg-slate-50 transition group">
+                        <div class="flex items-center space-x-3 text-xs">
+                            <span class="text-lg">📊</span>
+                            <span class="font-medium text-slate-700 group-hover:text-simpath transition font-mono">q3_actuals_vs_forecast.xlsx</span>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-1 rounded group-hover:bg-simpath/10 group-hover:text-simpath font-bold">EXCEL</span>
+                    </a>
+                    <a href="#" onclick="alert('Downloading: context_memo.pdf')" class="flex items-center justify-between p-3 border border-gray-200 rounded-xl hover:border-simpath hover:bg-slate-50 transition group">
+                        <div class="flex items-center space-x-3 text-xs">
+                            <span class="text-lg">📄</span>
+                            <span class="font-medium text-slate-700 group-hover:text-simpath transition font-mono">context_memo.pdf</span>
+                        </div>
+                        <span class="text-[10px] bg-slate-100 text-slate-500 px-2 py-1 rounded group-hover:bg-simpath/10 group-hover:text-simpath font-bold">PDF</span>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Graded criteria section upgraded with visual metrics indicators -->
+            <div>
+                <h3 class="font-bold text-xs text-gray-900 uppercase tracking-wider mb-4">Graded on</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-700">Root-cause accuracy</span>
+                            <span class="text-simpath font-bold">40%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-simpath h-full rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-700">Quantification rigor</span>
+                            <span class="text-simpath font-bold">30%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-simpath h-full rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-700">Recommendation feasibility</span>
+                            <span class="text-simpath font-bold">20%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-simpath h-full rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-700">Communication clarity</span>
+                            <span class="text-simpath font-bold">10%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-simpath h-full rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Upload Engine & Approach Log Arena -->
+        <section class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-6 relative">
+            <div>
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block mb-1">your submission</span>
+                <h2 class="text-2xl font-extrabold text-gray-900 tracking-tight">Upload your deliverable</h2>
+            </div>
+
+            <!-- Drag & Drop Arena Box Structure -->
+            <div id="drop-zone" class="border-2 border-dashed border-gray-200 hover:border-simpath rounded-2xl p-8 text-center bg-slate-50/50 hover:bg-white transition cursor-pointer relative">
+                <input type="file" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".xlsx,.pdf">
+                <div class="space-y-2">
+                    <div class="text-2xl text-slate-400">☁</div>
+                    <p class="text-xs font-semibold text-gray-700">Drag .xlsx or .pdf here</p>
+                    <p class="text-[11px] text-gray-400">or click to browse local files</p>
+                </div>
+            </div>
+
+            <!-- Active file attachment state container matching image_36605d.jpg asset -->
+            <div id="file-badge" class="bg-[#F4F6F0] border border-[#E1E6DA] px-4 py-3 rounded-xl flex justify-between items-center text-xs">
+                <div class="flex items-center space-x-2 text-[#4D5737] font-medium font-mono">
+                    <span>📊</span>
+                    <span id="attached-file-name">analysis_draft_v2.xlsx</span>
+                </div>
+                <button onclick="clearAttachedFile()" class="text-gray-400 hover:text-gray-600 font-bold px-1 text-base">&times;</button>
+            </div>
+
+            <!-- Focus approach textual summary logger area -->
+            <div class="space-y-2">
+                <label class="block font-bold text-xs text-gray-900 uppercase tracking-wider">
+                    Approach notes <span class="text-gray-400 normal-case font-normal">(read by senior reviewer)</span>
+                </label>
+                <textarea id="approach-notes-area" rows="4" class="w-full p-4 border border-gray-200 rounded-xl text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-simpath/20 focus:border-simpath leading-relaxed" placeholder="Summarize your analytical structure logic..."></textarea>
+            </div>
+
+            <!-- Form Submission Pipeline Action Control -->
+            <button onclick="executeCaseSubmission()" class="w-full bg-simpath text-white text-xs font-bold py-4 rounded-xl hover:bg-simpath-hover transition shadow-md flex justify-center items-center space-x-2">
+                <span>Submit for senior review</span>
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Footer Area Block -->
+    <footer class="bg-simpath-dark text-gray-400 py-6 border-t border-gray-800 shrink-0 text-xs mt-12">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <div>&copy; 2026 SimPath Executive Simulation Terminal.</div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts Pipeline Core -->
+    <script>
+        // 1. Live Interactive Real-Time Countdown Mechanism
+        let totalSecondsLeft = (1 * 3600) + (42 * 60) + 33; // 1:42:33 initial timeline track value
+        const timerContainer = document.getElementById('simulation-countdown');
+
+        const intervalEngine = setInterval(() => {
+            if (totalSecondsLeft <= 0) {
+                clearInterval(intervalEngine);
+                timerContainer.innerText = "00:00:00";
+                alert("Simulation session window has expired.");
+                return;
+            }
+            totalSecondsLeft--;
+            
+            let hrs = Math.floor(totalSecondsLeft / 3600);
+            let mins = Math.floor((totalSecondsLeft % 3600) / 60);
+            let secs = totalSecondsLeft % 60;
+
+            timerContainer.innerText = 
+                `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }, 1000);
+
+        // 2. Local File State Allocation Interaction Nodes
+        const fileInputNode = document.getElementById('file-input');
+        const fileBadgeContainer = document.getElementById('file-badge');
+        const fileNamePlaceholder = document.getElementById('attached-file-name');
+        const notesAreaNode = document.getElementById('approach-notes-area');
+
+        // Preset matching initial picture representation data
+        notesAreaNode.value = "Started with a P&L decomposition by product line, then split variance into volume vs price effects. 80% of the gap concentrated in Product B...";
+
+        fileInputNode.addEventListener('change', (e) => {
+            if(e.target.files.length > 0) {
+                fileNamePlaceholder.innerText = e.target.files[0].name;
+                fileBadgeContainer.classList.remove('hidden');
+                fileBadgeContainer.classList.add('flex');
+            }
+        });
+
+        function clearAttachedFile() {
+            fileInputNode.value = "";
+            fileBadgeContainer.classList.remove('flex');
+            fileBadgeContainer.classList.add('hidden');
+        }
+
+        // 3. Execution pipeline compilation routing
+        function executeCaseSubmission() {
+            if(fileBadgeContainer.classList.contains('hidden')) {
+                alert("Please attach your .xlsx or .pdf deliverable before submitting.");
+                return;
+            }
+            
+            // Sync cross-file milestone pipeline completion flags to localStorage
+            localStorage.setItem('simpath_lvl3_done', 'true');
+            localStorage.setItem('simpath_sims_count', '2 / 3 Tasks');
+            localStorage.setItem('simpath_tier_status', 'Tier A- Match');
+            
+            alert("🚀 Deliverable packets compiled and successfully dispatched to senior corporate partners evaluation pipelines!");
+            window.location.href = "dashboard.html";
+        }
+    </script>
+</body>
+</html>
