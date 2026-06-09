@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Simulation & Shortlists - SimPath</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { simpath: { DEFAULT: '#3C3489', hover: '#534AB7', light: '#EEEDF9', dark: '#241E53' } } } }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 min-w-[1200px] flex flex-col min-h-screen">
+
+    <div class="bg-yellow-100 text-yellow-800 text-center py-2 px-4 text-sm font-medium border-b border-yellow-200">
+        💡 <strong>DEMO PERSONALIZATION:</strong> Use the Left Sidebar to filter roles/industries. Expanded simulation track active with 7 comprehensive evaluation phases.
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-simpath text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wider bg-white text-simpath px-3 py-1 rounded">SimPath</span>
+            </a>
+            <div class="flex items-center space-x-6 font-medium">
+                <a href="index.html" class="text-white/70 hover:text-white transition">Home</a>
+                <a href="dashboard.html" class="text-white/70 hover:text-white transition">Student Dashboard</a>
+                <a href="simulation.html" class="text-white border-b-2 border-white pb-1">Job Simulation</a>
+                <a href="advanced-simulation.html" class="text-yellow-300 hover:text-yellow-400 font-semibold transition flex items-center space-x-1">
+        <span>🔥 Advanced Sim</span>
+    </a>
+                <a href="apply-match.html" class="text-white/70 hover:text-white transition">Advanced Match</a>
+                <a href="cohort-workspace.html" class="text-white/70 hover:text-white transition">Cohort Workspace</a>
+                <a href="signup.html" class="bg-yellow-400 text-simpath-dark px-5 py-2.5 rounded-lg font-bold hover:bg-yellow-500 transition shadow">Apply for Batch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Matrix -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-10 w-full grid grid-cols-4 gap-8">
+        
+        <!-- Left Shortlist Sidebar -->
+        <div class="col-span-1 space-y-6">
+            <div class="bg-white rounded-2xl border p-5 shadow-sm space-y-6 sticky top-28">
+                <div>
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-3 flex items-center">
+                        👤 Roles
+                    </h3>
+                    <input type="text" placeholder="Search roles..." class="w-full text-xs p-2 border rounded mb-3">
+                    <div class="flex flex-wrap gap-2" id="role-tags">
+                        <button onclick="toggleFilter(this, 'role')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">AI Business Analyst</button>
+                        <button onclick="toggleFilter(this, 'role')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Growth Marketer</button>
+                        <button onclick="toggleFilter(this, 'role')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Product Owner Assistant</button>
+                        <button onclick="toggleFilter(this, 'role')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Data Consultant</button>
+                        <button onclick="toggleFilter(this, 'role')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Operations Lead</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-3 flex items-center">
+                        🏢 Industries
+                    </h3>
+                    <input type="text" placeholder="Search industries..." class="w-full text-xs p-2 border rounded mb-3">
+                    <div class="flex flex-wrap gap-2" id="industry-tags">
+                        <button onclick="toggleFilter(this, 'industry')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Tech & SaaS</button>
+                        <button onclick="toggleFilter(this, 'industry')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Consumer Goods (FMCG)</button>
+                        <button onclick="toggleFilter(this, 'industry')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Logistics & Supply Chain</button>
+                        <button onclick="toggleFilter(this, 'industry')" class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1.5 rounded-full font-medium hover:bg-simpath-light transition">Fintech & Banking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Simulation View Cards -->
+        <div class="col-span-3 space-y-6">
+            <div class="border-b pb-4 flex justify-between items-end">
+                <div>
+                    <h1 class="text-3xl font-extrabold text-simpath-dark">Interactive Skill Assessment Matrix</h1>
+                    <p class="text-sm text-gray-500 mt-1">Complete foundational Free levels to qualify for elite premium enterprise tracks.</p>
+                </div>
+                <div class="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-lg border">
+                    Showing: <span class="text-simpath font-bold">10 Simulation Tracks</span>
+                </div>
+            </div>
+
+            <!-- 10 Simulation Levels Grid -->
+            <div class="grid grid-cols-3 gap-6" id="simulation-cards-container">
+                
+                <!-- Level 1 (FREE - 7 Questions) -->
+                <div class="bg-white rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-2 border-simpath" data-role="AI Business Analyst" data-industry="Tech & SaaS">
+                    <span class="absolute top-0 right-0 bg-simpath text-white text-[10px] font-bold px-3 py-1 rounded-bl">FREE ACCESS</span>
+                    <div>
+                        <span class="text-xs font-bold text-simpath uppercase">Level 1 - Core Foundations</span>
+                        <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2">Career Awareness</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-4">A complete 7-phase diagnostic suite checking logical prioritization, business trade-offs, and critical data triage protocols.</p>
+                    </div>
+                    <button onclick="openSimulationSystem(1)" class="w-full bg-simpath text-white text-xs font-bold py-3 rounded-xl hover:bg-simpath-hover">Launch Simulator (7 Phases)</button>
+                </div>
+
+                <!-- Level 2 (FREE - 7 Questions) -->
+                <div class="bg-white rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-2 border-simpath" data-role="Growth Marketer" data-industry="Consumer Goods (FMCG)">
+                    <span class="absolute top-0 right-0 bg-simpath text-white text-[10px] font-bold px-3 py-1 rounded-bl">FREE ACCESS</span>
+                    <div>
+                        <span class="text-xs font-bold text-simpath uppercase">Level 2 - Applied Strategy</span>
+                        <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2">Tactical Mindset</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-4">Evaluate competitive market counter-attacks, churn analytics, product adoption curves, and growth frameworks.</p>
+                    </div>
+                    <button onclick="openSimulationSystem(2)" class="w-full bg-simpath text-white text-xs font-bold py-3 rounded-xl hover:bg-simpath-hover">Launch Simulator (7 Phases)</button>
+                </div>
+
+                <!-- Level 3 (PREMIUM BASE) -->
+                <div class="bg-white rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border border-dashed border-purple-300" data-role="Product Owner Assistant" data-industry="Logistics & Supply Chain">
+                    <span class="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl">PREMIUM</span>
+                    <div>
+                        <span class="text-xs font-bold text-amber-600 uppercase">Level 3 - Enterprise Case</span>
+                        <h3 class="font-bold text-lg text-gray-900 mt-1 mb-2">Advanced Simulation</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-4">Access authentic strategic assignments curated directly from corporate partner operation pipelines (GreenBrew track).</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-amber-500 text-white text-xs font-bold py-3 rounded-xl hover:bg-amber-600">Unlock Track & Match</button>
+                </div>
+
+                <!-- === NEW 7 PREMIUM LEVELS (VISUAL ONLY / NO INTERNAL QUESTIONS) === -->
+                
+                <!-- Level 4 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Data Consultant" data-industry="Tech & SaaS">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 4 • PRO</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 4 - Predictive modeling</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">SaaS Churn Analytics</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Deep dive into ARR/MRR degradation metrics, customer health scoring, and contraction vectors for enterprise accounts.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 5 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Growth Marketer" data-industry="Consumer Goods (FMCG)">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 5 • PRO</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 5 - Unit Economics</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">FMCG CAC/LTV Optimization</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Restructure aggressive digital ad bidding systems and distribution spend to recover compressing contribution margins.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 6 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Operations Lead" data-industry="Logistics & Supply Chain">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 6 • PRO</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 6 - Distribution Logistics</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">Last-Mile Cost Efficiency</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Evaluate geographical routing bottle-necks, regional delivery failure metrics, and courier asset utilization models.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 7 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="AI Business Analyst" data-industry="Fintech & Banking">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 7 • EXPERT</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 7 - Risk Underwriting</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">Fintech Credit Scoring Matrix</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Model alternative risk evaluation patterns for digital lending systems using micro-transaction pipeline parameters.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 8 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Product Owner Assistant" data-industry="Tech & SaaS">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 8 • EXPERT</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 8 - Product Management</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">Activation Funnel Diagnosis</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Analyze cross-device UI onboarding drop-off logs and design high-impact activation loop enhancements.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 9 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Data Consultant" data-industry="Fintech & Banking">
+                    <span class="absolute top-0 right-0 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 9 • ELITE</span>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase">Level 9 - Quantitative Compliance</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">Anti-Money Laundering Triage</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Isolate suspicious high-frequency money routing transfers using volume spikes and statistical outliers detection.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-slate-800 text-white text-xs font-bold py-3 rounded-xl hover:bg-slate-900">Unlock Premium Content</button>
+                </div>
+
+                <!-- Level 10 -->
+                <div class="bg-slate-50 rounded-2xl border p-6 flex flex-col justify-between shadow-sm relative border-gray-200 opacity-75" data-role="Operations Lead" data-industry="Consumer Goods (FMCG)">
+                    <span class="absolute top-0 right-0 bg-purple-700 text-white text-[10px] font-bold px-3 py-1 rounded-bl">LEVEL 10 • CAPSTONE</span>
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 uppercase">Level 10 - Corporate Strategy</span>
+                        <h3 class="font-bold text-lg text-slate-700 mt-1 mb-2">Global Market Expansion Deck</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Complete full macro-environmental country risk reports and tariff modeling to anchor direct-to-consumer footprint scaling.</p>
+                    </div>
+                    <button onclick="triggerPaymentMock()" class="w-full bg-purple-700 text-white text-xs font-bold py-3 rounded-xl hover:bg-purple-800">Unlock Capstone</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- EXPANDED SIMULATOR MODAL -->
+    <div id="quiz-system-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[90vh]">
+            <div class="bg-simpath text-white p-5 flex justify-between items-center">
+                <div>
+                    <h3 id="q-modal-title" class="font-bold text-base">SimPath Core Evaluation Terminal</h3>
+                    <p class="text-[10px] text-purple-200 mt-0.5">Automated AI Assessment Matrix Active</p>
+                </div>
+                <button onclick="closeSimulationSystem()" class="text-xl font-bold">&times;</button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto flex-grow space-y-6" id="q-modal-body">
+                <!-- Dynamically populated via script -->
+            </div>
+
+            <div class="p-4 bg-gray-50 border-t flex justify-between items-center" id="q-modal-footer">
+                <!-- Dynamically populated via script -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-simpath-dark text-gray-400 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm">
+            <div>&copy; 2026 SimPath. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="js/simulation.js"></script>
+</body>
+</html>
